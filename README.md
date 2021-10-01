@@ -1,4 +1,5 @@
 # Demo project for password validator
+![img](images/exemple.jpg)
 ## Installation
 
 No installation needed
