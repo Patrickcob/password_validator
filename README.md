@@ -44,3 +44,10 @@ Add the `id` in this list to modify/add restrictions to your password checker.
 
 ## License
 [Apache2.0](LICENSE)
+
+## Other Librairies
+* [PW Strength](https://github.com/chenmeister/PWStrength)
+  ![img](https://i0.wp.com/www.cssscript.com/wp-content/uploads/2017/09/PWStrength.png?fit=636%2C459&ssl=1)
+
+* [Checkforce](https://github.com/jaimeneeves/checkforce.js/blob/master/README.md)
+![img](https://i1.wp.com/www.cssscript.com/wp-content/uploads/2018/11/Test-Password-Strength-While-Typing-checkforce.js.png?fit=623%2C555&ssl=1)
