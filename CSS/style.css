@@ -1,0 +1,65 @@
+body {
+    background-color: rgb(246, 246, 246);
+}
+
+.formulaire {
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.button {
+    background-color: #ffe600; /* Green */
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 5px 50%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+  }
+
+.button:hover {
+    background-color: black;
+    color: white;
+}
+
+.valid {
+    color: rgb(0, 128, 75);
+}
+/* A check will appear */
+.valid:before {
+    position: relative;
+    left: -2px;
+    content: "\2713";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+    color: rgb(160, 59, 59);
+}
+
+.invalid:before {
+    position: relative;
+    left: -2px;
+    content: "\2718";
+}
+
+.titre {
+    margin: auto;
+    width: 50%; 
+    padding: 10px; 
+    text-align: center;
+}
+
+.requis {
+    color: rgb(160, 59, 59);
+}
+

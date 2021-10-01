@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usecases visual aid Password</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="CSS/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container shadow-lg mt-4 mb-4 formulaire">
+        <div class="row titre">
+            <div>
+                <img src="https://sittmp.reservia.viarail.ca/images/logo/logo_viarail.png" alt="" style="width: 128px;">
+            </div>
+            <figure>
+                <blockquote class="blockquote">
+                    <p class="h3">Validation de mot de passe - Usecase ReserVIA</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    Essayez d'entrer un mot de passe
+                </figcaption>
+            </figure>
+        </div>
+        <div class="row" style="width: fit-content; margin: auto;">
+            <form>
+                <span><b>LOGIN</b></span>
+                <br>
+                <label class="form-label" for="usrname">Email or VIA Préférence #</label><span class="requis">*</span>
+                <input class="form-control" type="text" id="usrname" name="usrname" value="youremail@email.com"
+                    required>
+
+                <label class="form-label pt-2" for="psw">Password</label><span class="requis">*</span>
+                <input class="form-control" type="password" id="psw" name="psw"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[-’/`~!#*$@_%+=.,^&(){}[\]|;:”<>?\\]).{8,}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, a special character and at least 8 or more characters"
+                    required>
+                <div class="progress" style="height: 3px;">
+                    <div id="progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                        aria-valuemin="0" aria-valuemax="5"></div>
+                </div>
+                <!-- An element to toggle between password visibility -->
+                <input class="form-check-input" type="checkbox" onclick="showPassword()"> Show Password
+                <br>
+                <label class="form-label pt-2" for="psw">Confirm password</label><span class="requis">*</span>
+                <input class="form-control" type="password" id="psw2" name="psw2" onkeyup="confirmation()" required>
+                <div id="messageConfirmation"></div>
+                <br>
+                <div class="pt-3 pb-3">
+                    <button class="button" type="submit" value="Submit"><b>REGISTER</b></button>
+                </div>
+                <div class="pb-2">
+                    <a class="link-primary" href="#">Forget your password</a>
+                </div>
+
+
+            </form>
+        </div>
+        <div class="row shadow-lg" style="margin: auto; width: 50%; padding: 10px;" id="message">
+            <h5>Password must contain the following:</h5>
+            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="special" class="invalid">A <b>special</b> character</p>
+            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+        </div>
+        <br>
+    </div>
+
+
+
+    <!-- Bootstrap 5 bundles -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Local script -->
+    <script src="JS/script.js"></script>
+</body>
+
+</html>
