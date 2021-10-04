@@ -44,7 +44,7 @@ Add the `id` in this list to modify/add restrictions to your password checker.
 ```
 
 ## License
-[Apache2.0](LICENSE)
+[Apache 2.0](LICENSE)
 
 ## Other Librairies
 * [PW Strength](https://github.com/chenmeister/PWStrength)
