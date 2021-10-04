@@ -8,16 +8,6 @@ var length = document.getElementById("length");
 var special = document.getElementById("special");
 var progBar = document.getElementById("progress");
 
-// When the user clicks on the password field, show the message box
-myPassword.onfocus = function () {
-    document.getElementById("message").style.display = "block";
-}
-
-// When the user clicks outside of the password field, hide the message box
-myPassword.onblur = function () {
-    document.getElementById("message").style.display = "none";
-}
-
 // When the user starts to type something inside the password field
 myPassword.onkeyup = function () {
     // Validate lowercase letters
@@ -94,6 +84,7 @@ myPassword.addEventListener('keyup', function () {
         
 })
 
+// Function that is binded to the checkBox, make possible to see password
 function showPassword() {
     if (myPassword.type === "password") {
         myPassword.type = "text";
