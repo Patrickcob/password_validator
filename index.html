@@ -27,7 +27,7 @@
             </figure>
         </div>
         <div class="row" style="width: fit-content; margin: auto;">
-            <form>
+            <form onsubmit="return confirm()" method="POST">
                 <span><b>LOGIN</b></span>
                 <br>
                 <label class="form-label" for="usrname">Email or VIA Préférence #</label><span class="requis">*</span>
@@ -47,7 +47,7 @@
                 <input class="form-check-input" type="checkbox" onclick="showPassword()"> Show Password
                 <br>
                 <label class="form-label pt-2" for="psw">Confirm password</label><span class="requis">*</span>
-                <input class="form-control" type="password" id="psw2" name="psw2" onkeyup="confirmation()" required>
+                <input class="form-control" type="password" id="psw2" name="psw2" onkeyup="confirm()" required>
                 <div id="messageConfirmation"></div>
                 <br>
                 <div class="pt-3 pb-3">

@@ -65,7 +65,7 @@ function passwordStrength(pw) {
         + /[A-Z]/.test(pw)         /* a upper letter */
         + /\d/.test(pw)            /* a digit */
         + /[-’/`~!#*$@_%+=.,^&(){}[\]|;:”<>?\\]/.test(pw)  /* a special character */
-    
+
 }
 
 myPassword.addEventListener('keyup', function () {
@@ -81,7 +81,7 @@ myPassword.addEventListener('keyup', function () {
         //color green
         progBar.style.backgroundColor = "rgb(0, 128, 75)";
     }
-        
+
 })
 
 // Function that is binded to the checkBox, make possible to see password
@@ -93,13 +93,14 @@ function showPassword() {
     }
 }
 
-
-confirmPass.addEventListener('keyup', function() {
+function confirm() {
     if (myPassword.value == confirmPass.value) {
-      document.getElementById('messageConfirmation').style.color = 'rgb(0, 128, 75)';
-      document.getElementById('messageConfirmation').innerHTML = 'Match! &#10003;';
+        document.getElementById('messageConfirmation').style.color = 'rgb(0, 128, 75)';
+        document.getElementById('messageConfirmation').innerHTML = 'Match! &#10003;';
+        return true;
     } else {
-      document.getElementById('messageConfirmation').style.color = 'rgb(160, 59, 59)';
-      document.getElementById('messageConfirmation').innerHTML = 'No match! &#10008;';
+        document.getElementById('messageConfirmation').style.color = 'rgb(160, 59, 59)';
+        document.getElementById('messageConfirmation').innerHTML = 'No match! &#10008;';
+        return false;
     }
-  })
+}
