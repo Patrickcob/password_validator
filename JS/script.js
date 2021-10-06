@@ -8,11 +8,17 @@ var length = document.getElementById("length");
 var special = document.getElementById("special");
 var progBar = document.getElementById("progress");
 
+//regex
+var lengthRegex = new RegExp("^[ -ÿ]{8,80}$");
+var numberRegex = new RegExp("[0-9]");
+var lowerCaseRegex = new RegExp("[a-z]");
+var upperCaseRegex = new RegExp("[A-Z]");
+var specialRegex = new RegExp("[-’/`~!#*$@_%+=.,^&(){}[\]|;:”<>?\\]");
+
 // When the user starts to type something inside the password field
 myPassword.onkeyup = function () {
     // Validate lowercase letters
-    var lowerCaseLetters = /[a-z]/g;
-    if (myPassword.value.match(lowerCaseLetters)) {
+    if (myPassword.value.match(lowerCaseRegex)) {
         letter.classList.remove("invalid");
         letter.classList.add("valid");
     } else {
@@ -21,8 +27,7 @@ myPassword.onkeyup = function () {
     }
 
     // Validate capital letters
-    var upperCaseLetters = /[A-Z]/g;
-    if (myPassword.value.match(upperCaseLetters)) {
+    if (myPassword.value.match(upperCaseRegex)) {
         capital.classList.remove("invalid");
         capital.classList.add("valid");
     } else {
@@ -31,8 +36,7 @@ myPassword.onkeyup = function () {
     }
 
     // Validate numbers
-    var numbers = /[0-9]/g;
-    if (myPassword.value.match(numbers)) {
+    if (myPassword.value.match(numberRegex)) {
         number.classList.remove("invalid");
         number.classList.add("valid");
     } else {
@@ -41,8 +45,7 @@ myPassword.onkeyup = function () {
     }
 
     // Validate special character
-    var specials = /[-’/`~!#*$@_%+=.,^&(){}[\]|;:”<>?\\]/g;
-    if (myPassword.value.match(specials)) {
+    if (myPassword.value.match(specialRegex)) {
         special.classList.remove("invalid");
         special.classList.add("valid");
     } else {
@@ -59,12 +62,13 @@ myPassword.onkeyup = function () {
         length.classList.add("invalid");
     }
 }
+
 function passwordStrength(pw) {
-    return /.{8,}/.test(pw)  /* at least 8 characters */
-        + /[a-z]/.test(pw)         /* a lower letter */
-        + /[A-Z]/.test(pw)         /* a upper letter */
-        + /\d/.test(pw)            /* a digit */
-        + /[-’/`~!#*$@_%+=.,^&(){}[\]|;:”<>?\\]/.test(pw)  /* a special character */
+    return lengthRegex.test(pw)  /* at least 8 characters */
+        + lowerCaseRegex.test(pw)         /* a lower letter */
+        + upperCaseRegex.test(pw)         /* a upper letter */
+        + numberRegex.test(pw)            /* a digit */
+        + specialRegex.test(pw)  /* a special character */
 
 }
 
